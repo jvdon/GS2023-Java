@@ -13,8 +13,17 @@ services:
     volumes:
       - ./data/:/var/lib/mysql
     networks:
-      - mysql-network
+      - gs-network
+  
+  msconsulta:
+    container_name: msconsulta
+    image: msconsulta:v1
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - gs-netowk
 
 networks:
-    mysql-network:
+    gs-network:
         driver: bridge
