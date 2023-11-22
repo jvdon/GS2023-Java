@@ -1,0 +1,68 @@
+{
+	"tituloConsulta": "",
+	"dataExame": "19/11/2023",
+	"diagnostico": "Disco de Ernea",
+	"receita": "Tramal",
+	"paciente": {
+		"cpf": "123.123.123-4",
+		"nome": "Ashnael Loke",
+		"telefone": "(11) 99443-2321",
+		"email": "joaovictordonato2@gmail.com"
+	},
+	"hospital": {
+		"nome": "São Camylo",
+		"endereco": "Avenida Pompeia, 1178"
+	},
+	"funcionario": {
+		"nome": "José Luis Datena",
+		"tipoFuncionario": "MEDICO",
+		"telefone": "4002-8922"
+	},
+	"status": "REALIZADO"
+}
+
+{
+	"exame": "Raio-X",
+	"dataExame": "10/11/2023",
+	"diagnostico": "Pneumonia",
+	"receita": "Lorazepan",
+	"paciente": {
+		"cpf": "159.357.456-4",
+		"nome": "Chirstina Loke",
+		"telefone": "(11) 99443-6589",
+		"email": "chis.loke@gmail.com"
+	},
+	"hospital": {
+		"nome": "São Camilo",
+		"endereco": "Avenida Pompeia, 1178"
+	},
+	"funcionario": {
+		"nome": "Dr. Jean Mauro",
+		"tipoFuncionario": "MEDICO",
+		"telefone": "4002-8922"
+	},
+	"status": "REALIZADO"
+}
+
+{
+	"exame": "Ressonancia Magnetica",
+	"dataExame": "15/11/2023",
+	"diagnostico": "Inflamação no jeolho direito",
+	"receita": "Tramal",
+	"paciente": {
+		"cpf": "753.951.654-2",
+		"nome": "Kyle Loke",
+		"telefone": "(11) 99443-5867",
+		"email": "kyle.loke@gmail.com"
+	},
+	"hospital": {
+		"nome": "São Camilo",
+		"endereco": "Avenida Pompeia, 1178"
+	},
+	"funcionario": {
+		"nome": "Dr. Lucas de Moura",
+		"tipoFuncionario": "MEDICO",
+		"telefone": "4002-9855"
+	},
+	"status": "REALIZADO"
+}

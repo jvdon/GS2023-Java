@@ -1,0 +1,81 @@
+{
+    "id": 4,
+    "exame": "Raio-X Magnetica",
+    "paciente": {
+        "cpf": "753.951.654-2",
+        "nome": "Kyle Loke",
+        "telefone": "(11) 99443-5867",
+        "email": "kyle.loke@gmail.com"
+    },
+    "hospital": {
+        "id": 4,
+        "nome": "São Camilo",
+        "endereco": "Avenida Pompeia, 1178"
+    },
+    "funcionario": {
+        "id": 4,
+        "nome": "Dr. Lucas de Moura",
+        "tipoFuncionario": "MEDICO",
+        "telefone": "4002-9855",
+        "hospital": null
+    },
+    "dataExame": "15/11/2023",
+    "diagnostico": "Fratura no jeolho direito",
+    "receita": "Lorazepan",
+    "status": "REALIZADO"
+}
+
+{
+    "id": 2,
+    "exame": "Raio-X",
+    "paciente": {
+        "cpf": "123.123.123-4",
+        "nome": "Ashnael Loke",
+        "telefone": "(11) 99443-2321",
+        "email": "joaovictordonato2@gmail.com"
+    },
+    "hospital": {
+        "id": 2,
+        "nome": "São Camilo",
+        "endereco": "Avenida Dos Bobos, 1178"
+    },
+    "funcionario": {
+        "id": 2,
+        "nome": "Jose Luis Batch",
+        "tipoFuncionario": "MEDICO",
+        "telefone": "4002-8922",
+        "hospital": null
+    },
+    "dataExame": "19/11/2023",
+    "diagnostico": "Ernea de Disco",
+    "receita": "Tramal",
+    "status": "REALIZADO"
+}
+
+
+{
+    "id": 2,
+    "exame": "Angioplastia",
+    "paciente": {
+        "cpf": "753.951.654-2",
+        "nome": "Kyle Loke",
+        "telefone": "(11) 99443-5867",
+        "email": "kyle.loke@gmail.com"
+    },
+    "hospital": {
+        "id": 4,
+        "nome": "São Camilo",
+        "endereco": "Avenida Pompeia, 1178"
+    },
+    "funcionario": {
+        "id": 4,
+        "nome": "Dr. Lucas de Moura",
+        "tipoFuncionario": "MEDICO",
+        "telefone": "4002-9855",
+        "hospital": null
+    },
+    "dataExame": "15/11/2023",
+    "diagnostico": "Bloqueio na artea femural",
+    "receita": "Aspirina",
+    "status": "REALIZADO"
+}
