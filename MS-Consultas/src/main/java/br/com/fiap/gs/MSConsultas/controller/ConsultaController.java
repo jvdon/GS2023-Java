@@ -2,6 +2,7 @@ package br.com.fiap.gs.MSConsultas.controller;
 
 import br.com.fiap.gs.MSConsultas.dto.ConsultaDTO;
 import br.com.fiap.gs.MSConsultas.model.Consulta;
+import br.com.fiap.gs.MSConsultas.model.Paciente;
 import br.com.fiap.gs.MSConsultas.service.ConsultaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -13,7 +14,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.ws.rs.Path;
 import java.net.URI;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -42,6 +45,32 @@ public class ConsultaController {
     @GetMapping("/{id}")
     ResponseEntity<ConsultaDTO> findById(@PathVariable @NotNull Long id) {
         ConsultaDTO consulta = service.findById(id);
+
+        return ResponseEntity.ok(consulta);
+    }
+
+    @Operation(summary = "Exibe consulta por cpf")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Retorna informações sobre a consulta selecionada"),
+            @ApiResponse(responseCode = "204", description = "Retorna erro caso a consulta não exista"),
+
+    })
+    @GetMapping("/cpf/{cpf}")
+    ResponseEntity<ConsultaDTO> findByPaciente(@PathVariable @NotNull String cpf) {
+        ConsultaDTO consulta = service.findByPaciente(cpf);
+
+        return ResponseEntity.ok(consulta);
+    }
+
+    @Operation(summary = "Exibe consulta por medico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Retorna informações sobre a consulta selecionada"),
+            @ApiResponse(responseCode = "204", description = "Retorna erro caso a consulta não exista"),
+
+    })
+    @GetMapping("/medico/{id}")
+    ResponseEntity<ConsultaDTO> findByMedico(@PathVariable @NotNull Long id) {
+        ConsultaDTO consulta = service.findByMedico(id);
 
         return ResponseEntity.ok(consulta);
     }

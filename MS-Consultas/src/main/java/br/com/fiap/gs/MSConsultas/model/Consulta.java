@@ -1,5 +1,7 @@
 package br.com.fiap.gs.MSConsultas.model;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 import javax.persistence.*;
 import java.util.Date;
 

@@ -3,6 +3,8 @@ package br.com.fiap.gs.MSConsultas.service;
 import br.com.fiap.gs.MSConsultas.dto.ConsultaDTO;
 import br.com.fiap.gs.MSConsultas.exception.ResourceNotFoundException;
 import br.com.fiap.gs.MSConsultas.model.Consulta;
+import br.com.fiap.gs.MSConsultas.model.Funcionario;
+import br.com.fiap.gs.MSConsultas.model.Paciente;
 import br.com.fiap.gs.MSConsultas.model.StatusEnum;
 import br.com.fiap.gs.MSConsultas.repository.ConsultaRepository;
 import br.com.fiap.gs.MSConsultas.repository.FuncionarioRepository;
@@ -15,6 +17,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -49,16 +52,38 @@ public class ConsultaService {
         return new ConsultaDTO(consulta);
     }
 
+    @Transactional(readOnly = true)
+    public ConsultaDTO findByPaciente(String cpf) {
+        Consulta consulta = consultaRepository.findByPaciente(cpf);
+        return new ConsultaDTO(consulta);
+    }
+
+    @Transactional(readOnly = true)
+    public ConsultaDTO findByMedico(Long id) {
+        Consulta consulta = consultaRepository.findByMedico(id);
+        return new ConsultaDTO(consulta);
+    }
+
+    @Transactional(readOnly = true)
+    public ConsultaDTO findByData(Date data) {
+        Consulta consulta = consultaRepository.findByData(data);
+        return new ConsultaDTO(consulta);
+    }
+
     @Transactional
     public ConsultaDTO insert(ConsultaDTO dto) {
         Consulta consulta = new Consulta();
         copyDtoToEntity(dto, consulta);
 
+//        if(!funcionarioRepository.existsById(consulta.getFuncionario().getId()))
         funcionarioRepository.save(consulta.getFuncionario());
+//        if(!pacienteRepository.existsById(consulta.getPaciente().getCpf()))
         pacienteRepository.save(consulta.getPaciente());
+//        if(!hospitalRepository.existsById(consulta.getHospital().getId()))
         hospitalRepository.save(consulta.getHospital());
-        consulta = consultaRepository.save(consulta);
 
+        consulta.setStatus(StatusEnum.MARCADO);
+        consulta = consultaRepository.save(consulta);
 
         return new ConsultaDTO(consulta);
     }
@@ -106,8 +131,6 @@ public class ConsultaService {
         //salva a alteração no DB
         consultaRepository.save(consulta.get());
     }
-
-
 
 
     @Transactional(propagation = Propagation.SUPPORTS)
